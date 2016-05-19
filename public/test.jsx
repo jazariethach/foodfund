@@ -17,8 +17,13 @@ var App = React.createClass({
         }.bind(this);
       },
       onSubmit: function(e) {
-        e.preventDefault()
-        alert('form submitted!')
+        e.preventDefault()    
+        console.log(this.state.state);
+        $.post("http://localhost:3000/create_event", this.state.state, function(data){
+          if(data==='done') {
+            alert('form submitted!')
+          }
+        });           
       },
     	render: function() {
     		return(

@@ -1,0 +1,22 @@
+{
+  "name": "foodfund",
+  "version": "1.0.0",
+  "description": "Fundraising application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jazariethach/foodfund.git"
+  },
+  "author": "Jazarie Thach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jazariethach/foodfund/issues"
+  },
+  "homepage": "https://github.com/jazariethach/foodfund#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}

@@ -10,6 +10,7 @@ var App = React.createClass({
         };
       },
       handleChange: function (key) {
+
         return function (e) {
           var state = {};
           state[key] = e.target.value;
@@ -18,15 +19,14 @@ var App = React.createClass({
       },
       onSubmit: function(e) {
         e.preventDefault()    
-        console.log(this.state.state);
-        $.post("http://localhost:3000/create_event", this.state.state, function(data){
+        $.post("http://localhost:3000/create_event", this.state, function(data){
           if(data==='done') {
             alert('form submitted!')
           }
         });           
       },
-    	render: function() {
-    		return(
+      render: function() {
+        return(
         <form onSubmit={this.onSubmit}>
           <div className="form-group row">
             <label for="inputEmail3" className="col-sm-2 form-control-label">Event Title</label>
@@ -43,27 +43,27 @@ var App = React.createClass({
           </div>
 
           <div className="form-group row">
-            <label for="inputEmail3" className="col-sm-2 form-control-label" onChange={this.handleChange('location')} value={this.state.location}>Location</label>
+            <label for="inputEmail3" className="col-sm-2 form-control-label">Location</label>
             <div className="col-sm-6">
-              <input className="form-control" placeholder="Location"></input>
+              <input className="form-control" placeholder="Location" onChange={this.handleChange('location')} value={this.state.location}></input>
             </div>
           </div>
           <div className="form-group row">
-            <label for="inputEmail3" className="col-sm-2 form-control-label" value={this.state.start}>Start Date</label>
+            <label for="inputEmail3" className="col-sm-2 form-control-label">Start Date</label>
             <div className="col-sm-6">
-              <input className="form-control" placeholder="Start Date"></input>
+              <input className="form-control" placeholder="Start Date" onChange={this.handleChange('start')} value={this.state.start}></input>
             </div>
           </div>
           <div className="form-group row">
             <label for="inputEmail3" className="col-sm-2 form-control-label" onChange={this.handleChange('end')} value={this.state.end}>End Date</label>
             <div className="col-sm-6">
-              <input className="form-control" placeholder="End Date"></input>
+              <input className="form-control" placeholder="End Date" onChange={this.handleChange('end')} value={this.state.end}></input>
             </div>
           </div>
           <div className="form-group row">
-            <label for="inputEmail3" className="col-sm-2 form-control-label" onChange={this.handleChange('desc')} value={this.state.desc}>Description</label>
+            <label for="inputEmail3" className="col-sm-2 form-control-label">Description</label>
             <div className="col-sm-6">
-              <input className="form-control" placeholder="Description"></input>
+              <input className="form-control" placeholder="Description" onChange={this.handleChange('desc')} value={this.state.desc}></input>
             </div>
           </div>
           <div className="form-group row">
@@ -72,13 +72,13 @@ var App = React.createClass({
             </div>
           </div>
         </form>
-    		)
-    	}
+        )
+      }
     })
 
 
     ReactDOM.render(
-    	<App />,
-    	document.getElementById('root')
+      <App />,
+      document.getElementById('root')
 
     )

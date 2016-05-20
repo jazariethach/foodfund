@@ -1,4 +1,4 @@
-var App = React.createClass({
+var MyButton = React.createClass({
       getInitialState: function() {
         return {
           title: '',
@@ -28,7 +28,7 @@ var App = React.createClass({
       render: function() {
         return(
         <div className="container">
-          <button type="button" className="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Create Fundraising Event</button>
+          <button type="button" className="my-button btn btn-success btn-md" data-toggle="modal" data-target="#myModal">Create Fundraising Event</button>
 
           <div className="modal fade" id="myModal" role="dialog">
             <div className="modal-dialog">
@@ -81,7 +81,7 @@ var App = React.createClass({
                 </form>
                 </div>
                 <div className="modal-footer">
-                  <button type="submit" className="btn btn-success" data-dismiss="modal">Submit</button>
+                  <button type="submit" className="btn btn-success" data-dismiss="modal" onClick={this.onSubmit}>Submit</button>
                 </div>
               </div>
 
@@ -93,8 +93,8 @@ var App = React.createClass({
       }
     })
 
-    ReactDOM.render(
-      <App />,
-      document.getElementById('root')
+    // ReactDOM.render(
+    //   <App />,
+    //   document.getElementById('root')
 
-    )
+    // )

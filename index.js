@@ -41,9 +41,18 @@ app.post('/create_event',function(req,res){
     }
   });
   console.log(query.sql); 
-  // console.log("User name = "+user_name+", password is "+password);
   res.end("done");
 });
+
+app.get('/feed', function(req, res) {
+ connection.query('SELECT * FROM events', function(err, rows) {
+    if (err) {
+      console.log('err: ' + err);
+      throw err;
+    }
+    res.send(rows);
+  });
+})
 
 
 app.listen(port, function () {

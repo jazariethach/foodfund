@@ -1,4 +1,60 @@
+body {
+	background-color: #EEDFCC;	
+}
+
 .modal-header {
   background-color: #56A749;
   color: white;
 }
+
+.feed {
+	display: table;
+	margin: 0 auto;
+}
+
+#superButton {
+	align: right;
+	right: 10px;
+	top: 5px;
+}
+
+.card-container {
+	width: 500px;
+	height: 200px;
+	margin: 20px;
+	box-shadow: 0px 5px 11px #d3d3d3;
+	background-color: white;
+	/*padding: 10px;*/
+}
+
+.card-container > td {
+	position: relative;
+	display: block;
+}
+
+.nav-bar {
+  overflow: auto;
+ }
+ .nav-bar > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000026;
+  }
+
+ .nav-bar > ul > li {
+    float: left;
+  }
+
+  .my-button {
+  	position: right;
+  }
+
+ .nav-bar > ul > li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
